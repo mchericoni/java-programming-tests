@@ -31,7 +31,7 @@ public class Tasks {
 		}
 		int[] result = new int[items.size()];
 		for (int i = 0; i < items.size(); i++)
-			result[i] = (Integer) items.get(i);
+			result[i] = items.get(i);
 		return result;
 	}
 
@@ -54,8 +54,7 @@ public class Tasks {
 
 	public static boolean isPerfectNumber(int n) {
 		int sum = 0;
-		// TODO
-		for (int divisor = 1; divisor < n; divisor++) {
+		for (int divisor = 1; divisor <= n/2; divisor++) {
 			if (n % divisor == 0)
 				sum += divisor;
 		}
@@ -224,11 +223,22 @@ public class Tasks {
 		 * A different implementation that doesn't require sorting the array.
 		 */
 		int first = 0, second = 0;
-		for (int i = 0; i < a.length; i++) {
-			if (a[i] > first)
-				first = a[i];
-			else if (a[i] > second)
-				second = a[i];
+		if ((a != null) && (a.length > 1)) {
+			first = a[0];
+			second = a[1];
+			for (int i = 2; i < a.length; i++) {
+				if (a[i] > first) {
+					if (first > second) {
+						second = first;
+					}
+					first = a[i];
+				} else if (a[i] > second) {
+					if (second > first) {
+						first = second;
+					}
+					second = a[i];
+				}
+			}
 		}
 		return first + second;
 	}

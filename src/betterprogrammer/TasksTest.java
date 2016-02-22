@@ -72,6 +72,13 @@ public class TasksTest {
 				Tasks.sumOfTwoLargestElements(new int[] { 1, 5, 0, 4, 3 }));
 		assertEquals(9,
 				Tasks.sumOfTwoLargestElements_2(new int[] { 1, 5, 0, 4, 3 }));
-
+		assertEquals(15,
+				Tasks.sumOfTwoLargestElements(new int[] { 7, 8, 0, 4, 3 }));
+		assertEquals(15,
+				Tasks.sumOfTwoLargestElements_2(new int[] { 7, 8, 0, 4, 3 }));
+		assertEquals(17,
+				Tasks.sumOfTwoLargestElements(new int[] { 8, 7, 9, 4, 3 }));
+		assertEquals(17,
+				Tasks.sumOfTwoLargestElements_2(new int[] { 8, 7, 9, 4, 3 }));
 	}
 }
